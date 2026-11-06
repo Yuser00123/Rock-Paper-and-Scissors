@@ -2,41 +2,50 @@ import random
 
 moves = ['rock', 'paper', 'scissors']
 
-def determine_winner(user, ai):
-    if user == moves[ai]:
-        print(f"AI choosed {moves[ai]}.")
-        print("It is a tie between you and ai...")
-    elif (user == 'rock' and ai == 1):
-        print(f"AI choosed {moves[ai]}.")
-        print("You lose! Paper beats rock...")
-    elif (user == 'paper' and ai == 2):
-        print(f"AI choosed {moves[ai]}.")
-        print("You lose! Scissors beats paper...")
-    elif (user == 'scissors' and ai == 1):
-        print(f"AI choosed {moves[ai]}.")
-        print("You win! Scissors beats paper...")
-    elif (user == 'rock' and ai == 2):
-        print(f"AI choosed {moves[ai]}.")
-        print("You win! Rock beats scissors...")
-    elif (user == 'paper' and ai == 0):
-        print(f"AI choosed {moves[ai]}.")
-        print("You win! Paper beats rock...")
-    elif (user == 'scissors' and ai == 0):
-        print(f"AI choosed {moves[ai]}.")
-        print("You lose! Rock beats scissors...")
-    else:
-        print("Invalid input. Please enter rock, paper, or scissors.")
+beats = {
+    'rock': 'scissors',
+    'paper': 'rock',
+    'scissors':'paper'
+}
 
-playing = True
+def determine_winner(user_move, ai_move):
+    if (user_move == ai_move):
+        return "tie"
+    if beats[user_move] == ai_move:
+        return "win"
+    return "lose"
 
-while playing:
-    user_move = input("Enter your move (rock, paper scissors): ").lower()
-    ai_move = random.randint(0, 2)
-    if user_move == 'q':
-        print("Thanks for playing!")
-        playing = False
+def play_round(user_move):
+    ai_move = moves[random.randint(0, 2)]
+    result = determine_winner(user_move, ai_move)
+    print(f"Ai chose {ai_move}.")
+    if result == "tie":
+        print("It's a tie!")
+    elif result == "lose":
+        print(f"You lose! {ai_move} beats {user_move}.")
     else:
-        determine_winner(user_move, ai_move)
+        print(f"You won! {user_move} beats {ai_move}")
+
+
+
+def main():
+    print("Welcome to rock paper and scissors!") 
+
+    while True:
+        user_move = input("\nYour move (rock, paper, scissors - q to quit): ").strip().lower()
+        if user_move == "q":
+            print("byeeee!")
+            break
+        if user_move not in moves:
+            print("Please enter a valid move.")
+            continue 
+
+        play_round(user_move)
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 
