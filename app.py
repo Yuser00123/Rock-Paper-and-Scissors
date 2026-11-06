@@ -1,4 +1,5 @@
 import random
+from sklearn.linear_model import LogisticRegression
 
 moves = ['rock', 'paper', 'scissors']
 
@@ -8,6 +9,14 @@ beats = {
     'scissors':'paper'
 }
 
+move_map = {
+    'rock': 0,
+    'paper': 1,
+    'scissors': 2
+}
+
+user_moves = []
+
 def determine_winner(user_move, ai_move):
     if (user_move == ai_move):
         return "tie"
@@ -15,8 +24,43 @@ def determine_winner(user_move, ai_move):
         return "win"
     return "lose"
 
+def get_ai_move():
+    if len(user_moves) < 5:
+        return moves[random.randint(0, 2)]
+    X = []
+    y = []
+
+    for i in range(len(user_moves)):
+        previous_moves = user_moves[:i]
+        features = []
+
+        for move in moves:
+            features.append(previous_moves.count(move))
+            X.append(features)
+            y.append(move_map[user_moves[i]])
+
+        if len(set(y)) < 2:
+            return moves[random.randint(0, 2)]
+
+        model = LogisticRegression(max_iter=1000)
+        model.fit(X, y)
+
+        features = []
+
+        for move in moves:
+            features.append(user_moves.count(move))
+
+        prediction = model.predict([features])[0]
+        predicted_move = moves[prediction]
+        counter_moves = {
+            'rock': 'paper',
+            'paper': 'scissors',
+            'scissors': 'rock'
+        }
+        return counter_moves[predicted_move]
+
 def play_round(user_move):
-    ai_move = moves[random.randint(0, 2)]
+    ai_move = get_ai_move()
     result = determine_winner(user_move, ai_move)
     print(f"AI chose {ai_move}.")
     if result == "tie":
@@ -50,6 +94,7 @@ def main():
             continue 
 
         result = play_round(user_move)
+        user_moves.append(user_move)
         if result == "win":
             user_score += 1
         elif result == "lose":
