@@ -1,6 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Creepster&display=swap');
+
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: orange;
+    gap: 2px;
+    font-family: 'Agrave Pro', system-ui;
+    font-weight: 400;
 }
+
+button{
+    font-family: 'Agrave Pro', system-ui;
+    width: 200px;
+    height: 50px;
+    border-radius: 13px;
+    border: 1px solid black;
+    font-weight: 400;
+    font-size: 25px;
+    background-color: #f0f0f0;
+}
+
+button:active{
+    background-color: grey;
+}
+
