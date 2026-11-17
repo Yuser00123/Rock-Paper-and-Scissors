@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock paper scissors</title>
+    </head>
+    <body>
+        <h1>Game Over</h1>
+        <p>You final score is: {user_score}</p>
+        <p>AI final score is: {ai_score}</p>
+        <p>Number of tie rounds: {tie_round}</p>
+        <p class="result"> {% if user_score > ai_score %}You won!{% elif user_score < ai_score %}You lost!{% else %}It's a tie!{% endif %}</p>
+        <p>Thanks for playing!</p>
+    </body>
+</html>
