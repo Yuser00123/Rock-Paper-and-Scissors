@@ -5,10 +5,12 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-image: url('https://cdn.hackclub.com/01a1ea7c-a070-71ed-bff8-c1bdaac30706/wallpaper_4k.png');
+    background-size: cover;
     gap: 2px;
     font-family: 'Agrave Pro', system-ui;
     font-weight: 400;
+    color: white;
 }
 
 button{

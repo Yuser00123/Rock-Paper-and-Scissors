@@ -22,7 +22,7 @@ def play():
     if user_move not in game.moves:
         return "alert('Invalid move. Please type the correct move...')"
     elif user_move == "quit":
-        return render_template('quit.html')
+        return render_template('quit.html', user_score=user_score, ai_score=ai_score, tie_round=tie_round)
     else:
         user_move_count[user_move] += 1
         ai_move = game.get_ai_move(user_move_count)
