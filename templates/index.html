@@ -8,8 +8,10 @@
         <h1><u>Rock, paper and scissors</u></h1>
         <p>Welcome to the game of rock paper and scissors!
         <br>Enter your move below: </p>
-        <input type="text" id="move">
-        <button>Enter</button>
+        <form action="/submit" method="post">
+            <input type="text" id="move" name="move">
+            <button>Enter</button>
+        </form>
 
         <script>
             
