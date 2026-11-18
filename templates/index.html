@@ -6,11 +6,11 @@
     </head>
     <body>
         <h1><u>Rock, paper and scissors</u></h1>
-        <p>Welcome to the game of rock paper and scissors!
-        <br>Enter your move below: </p>
-        <form action="/submit" method="post">
+        <p>Welcome to the game of rock paper and scissors!</p>
+        <p>Enter your move below: </p>
+        <form action="{{ url_for('play') }}" method="post">
             <input type="text" id="move" name="move">
-            <button>Enter</button>
+            <button type="submit">Enter</button>
         </form>
 
         <script>
