@@ -14,7 +14,7 @@ user_move_count = {
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', user_score=user_score, ai_score=ai_score, tie_round=tie_round)
 
 @app.route('/submit', methods=['POST'])
 def play():
@@ -33,10 +33,10 @@ def play():
             return f"<script>alert('It is a tie! Both chose {user_move}.')</script>"
         elif game.beat[user_move] == ai_move:
             user_score += 1
-            return f"<script>alert('You win! Your move: {user_move} beats AI move: {ai_move}.')</script>"
+            return render_template('win.html', user_move=user_move, ai_move=ai_move)
         else:
             ai_score += 1
-            return f"<script>alert('You lose! AI move: {ai_move} beats Your move: {user_move}.')</script>"
+            return render_template('lose.html', user_move=user_move, ai_move=ai_move)
     
 
 if __name__ == '__main__':
