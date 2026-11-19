@@ -6,7 +6,7 @@
     <body>
         <h1>You won</h1>
         <p>You won this round!</p>
-        <p>You chose { user_move } and AI chose { ai_move }. { user_move } beats { ai_move }.</p>
-        <a href="{{ url_for('index.html') }}">Play again!</a>
+        <p>You chose {{ user_move }} and AI chose {{ ai_move }}. {{ user_move }} beats {{ ai_move }}.</p>
+        <a href="{{ url_for('home') }}">Play again!</a>
     </body>
 </html>

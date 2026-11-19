@@ -30,7 +30,7 @@ def play():
         user_move_count[user_move] += 1
         if user_move == ai_move:
             tie_round += 1
-            return f"<script>alert('It is a tie! Both chose {user_move}.')</script>"
+            return f"<script>alert('It is a tie! Both chose { user_move }.')</script>"
         elif game.beat[user_move] == ai_move:
             user_score += 1
             return render_template('win.html', user_move=user_move, ai_move=ai_move)
