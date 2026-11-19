@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <h1>You lost</h1>
+        <h1>You lost!</h1>
         <p>You lost this round!</p>
         <p>You chose {{ user_move }} and AI chose {{ ai_move }}. {{ ai_move }} beats {{ user_move }}.</p>
         <a href="{{ url_for('home') }}">Play again!</a>
