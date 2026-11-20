@@ -17,7 +17,7 @@ body{
 button{
     font-family: 'Agrave Pro', system-ui;
     width: 200px;
-    height: 50px;
+    height: 30px;
     border-radius: 13px;
     border: 1px solid black;
     font-weight: 400;
@@ -37,3 +37,11 @@ ul{
     font-size: 21px;
 }
 
+input{
+    font-family: 'Agrave Pro', system-ui;
+    width: 250px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 9px;
+    font-size: 21px;
+}

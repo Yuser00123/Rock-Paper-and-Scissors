@@ -9,7 +9,7 @@
         <p>Welcome to the game of rock paper and scissors! For information and rules, <a href="{{ url_for('info') }}">click here!</a></p>
         <p>Enter your move below: </p>
         <form action="{{ url_for('play') }}" method="post">
-            <input type="text" id="move" name="move">
+            <input type="text" id="move" name="move" placeholder="Enter your move">
             <button type="submit">Enter</button>
         </form>
         <p>Current score:- User: {{ user_score }} | AI score: {{ ai_score }}</p>
