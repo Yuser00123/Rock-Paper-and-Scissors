@@ -16,6 +16,10 @@ user_move_count = {
 def home():
     return render_template('index.html', user_score=user_score, ai_score=ai_score, tie_round=tie_round)
 
+@app.route('/info')
+def info():
+    return render_template('info.html')
+
 @app.route('/submit', methods=['POST'])
 def play():
     global user_score, ai_score, tie_round
