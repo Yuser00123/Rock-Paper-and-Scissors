@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Creepster&display=swap');
 
 body{
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
