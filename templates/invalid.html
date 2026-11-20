@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock PaperScissors</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Invalid Input</h1>
+        <p>You chose {{ user_move }}, which is not valid move. Please enter a valid move.</p>
+        <a href="{{ url_for('home') }}">Go back home</a>
+    </body>
+</html>

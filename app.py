@@ -24,13 +24,13 @@ def play():
     if user_move == "quit":
         return render_template('quit.html', user_score=user_score, ai_score=ai_score, tie_round=tie_round)
     elif user_move not in game.moves:
-        return f"<script>alert('Invalid move. Please enter the correct move...')</script>"
+        return render_template('invalid.html', user_move=user_move)
     else:
         ai_move = game.get_ai_move(user_move_count)
         user_move_count[user_move] += 1
         if user_move == ai_move:
             tie_round += 1
-            return f"<script>alert('It is a tie! Both chose { user_move }.')</script>"
+            return render_template('tie.html', user_move=user_move)
         elif game.beat[user_move] == ai_move:
             user_score += 1
             return render_template('win.html', user_move=user_move, ai_move=ai_move)
