@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Certificate</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1><strong><u>Get your certificate</u></strong></h1>
+        <input id="name" type="text" placeholder="Enter your name">
+        <button onclick="open_certificate()">Get my certificate</button>
+
+        <script>
+            function open_certificate(){
+                let name = document.getElementById("name").value;
+                window.location.href = `https://rps-certificate-api-beta.vercel.app/certificate?name=${name}`;
+           }
+        </script>
+    </body>
+</html>

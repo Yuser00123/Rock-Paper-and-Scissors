@@ -42,6 +42,9 @@ def play():
             ai_score += 1
             return render_template('lose.html', user_move=user_move, ai_move=ai_move)
     
+@app.route('/certificate')
+def certificate():
+    return render_template('certificate.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
