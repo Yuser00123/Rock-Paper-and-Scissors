@@ -17,7 +17,7 @@ body{
 button{
     font-family: 'Agrave Pro', system-ui;
     width: 200px;
-    height: 30px;
+    height: 50px;
     border-radius: 13px;
     border: 1px solid black;
     font-weight: 400;
@@ -44,4 +44,5 @@ input{
     border: 2px solid black;
     border-radius: 9px;
     font-size: 21px;
+    padding: 6px;
 }
