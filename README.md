@@ -1,74 +1,30 @@
-### Hi! Welcome to your VS Code Space!
+# ROCK PAPER AND SCISSORS GAME
+This is a python based rock paper scissors game which can be played both on web and CLI. It uses real AI algorithm(Markov chain) to predict user's next move.
 
-You can use this just like VS Code on your own computer. Your space is a full Linux machine (Ubuntu) that's yours alone, and you have admin access, so you can install whatever you need with `sudo`.
+![screenshot](https://cdn.hackclub.com/01a1fee1-e671-7a77-9e2d-82655dfafb8e/rock-paper-and-scissors-78s9.vercel.app-2026-11-21-2141.png)
 
-#### Good to know
-
-- **Your space stops by itself after 3 hours.** Everything is saved when it stops: your files, the tools you install and your settings. Start it again from the dashboard and you're right back where you left off.
-- **Only one space can run at a time.** Stop this one before starting another.
-- **Previewing a website you're building:** run it, then open `/proxy/<port>/` on this space's address, for example `/proxy/3000/` for something running on port 3000.
-
-#### Hackatime
-
-If you added your Hackatime API key in Settings before creating this space, Hackatime is already set up and tracking your time, under this space's name. If you added it later, install the "WakaTime" extension and paste your key when it asks.
-
-#### Already installed
-
-##### General
+## HOW TO USE
+First clone this repo by running
 ```
-git
-github-cli (gh)
-curl
-wget
-nano
-vim
-zip
-unzip
-jq
-tree
-tmux
-less
-ripgrep (rg)
-rsync
+git clone https://github.com/Yuser00123/Rock-Paper-and-Scissors
 ```
-
-##### Python
+Then if you want to play in CLI then using terminal run
 ```
-python3
-pip
-uv
+python game.py
 ```
-
-##### JavaScript
+If you want to play the web version then run this command
 ```
-node
-npm
-pnpm
-bun
+python app.py
 ```
+Make sure you are connected to internet if using web version.
 
-##### Database
-```
-sqlite3
-```
+## FEATURES
+- Can be played on both CLI and browser
+- It has an AI which predicts user's next move
+- Uses Markov chain algorithm for prediction
+- Can generate certificate on win
 
-#### Installing more
+## LIVE DEMO LINK
+For CLI version [click here](https://pyterm.hackclub.com/Yuser00123/Rock-Paper-and-Scissors).
 
-Use `apt` for anything else. Some common ones:
-
-| What | Command |
-|---|---|
-| C/C++ compilers and `make` (many npm and pip packages need these) | `sudo apt install -y build-essential cmake pkg-config` |
-| Java | `sudo apt install -y openjdk-21-jdk` |
-| Go | `sudo apt install -y golang` |
-| Rust | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` |
-| PHP | `sudo apt install -y php-cli` |
-| Ruby | `sudo apt install -y ruby-full` |
-| Yarn | `npm install -g yarn` |
-| PostgreSQL, MySQL and Redis clients | `sudo apt install -y postgresql-client mysql-client redis-tools` |
-| ffmpeg and ImageMagick | `sudo apt install -y ffmpeg imagemagick` |
-| htop | `sudo apt install -y htop` |
-
-Run `sudo apt update` first if a package isn't found.
-
-If something you need won't install, or isn't working, ask in #spaces on Slack!
+For web version [click here](https://rock-paper-and-scissors-78s9.vercel.app/).
