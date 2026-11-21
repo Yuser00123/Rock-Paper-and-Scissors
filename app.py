@@ -30,6 +30,11 @@ def home():
         tie_round=session["tie_round"]
     )
 
+@app.route('/reset')
+def reset():
+    session.clear()
+    return render_template('reset.html')
+
 @app.route('/info')
 def info():
     return render_template('info.html')
